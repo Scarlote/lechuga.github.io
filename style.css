@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('assets/fonts/RoTwimchRegular-WyR3n.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+* {
+    margin: 0; 
+    font-family: MyFont;
+}
+
+body {
+    background-color: #333;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body .container {
+    width: 26rem;
+    height: 32rem;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body .container #instructions {
+    width: 55%;
+    height: 55%;
+
+    position: absolute;
+}
+
+@keyframes removeInstructions {
+    from {  }
+    to{ transform: translateY(-25px); opacity: 0%; }
+}
+
+body .container #gameover {
+    width: 55%;
+    height: 10%;
+
+    position: absolute;
+
+    opacity: 0%;
+}
+
+@keyframes showGameOver {
+    from { opacity: 0%; }
+    to{ opacity: 100%; }
+}
+
+body .container canvas {
+    width: 100%; 
+    height: 100%;
+
+    position: absolute;
+    z-index: -1;
+}
+
+body .container .pointBox {
+    width: 10rem;
+    height: 12rem;
+
+    background-color: rgba(0, 0, 0, 0);
+
+    position: absolute;
+    z-index: 1;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+body .container .pointBox #point {
+    font-size: 4rem;
+    color: white;
+    font-weight: bold;
+
+    -webkit-text-stroke: 1.5px #333;
+}
